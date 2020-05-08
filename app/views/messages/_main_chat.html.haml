@@ -1,0 +1,39 @@
+.main
+
+  .main__header
+    .mein__header--left
+      .main__header--group
+        test1
+      .main__header--member
+        Member:aaa
+    .main__header--right
+      %button{type: "submit", class:'btn',onclick:"#"} Edit
+
+  .main__center
+    .main__main
+      .main__post--1
+        .post__top
+          .main__name--1
+            miyata
+          .main__day--1
+            2020/05/08(Fry)12:00
+        .main__comment--1
+          おはよう！
+
+      .main__post--2
+        .post__top
+          .main__name--2
+            miyata
+          .main__day--2
+            2020/05/09(Sat)13:00
+        .main__comment--2
+          こんんちは！
+            
+    .main__footer
+      %form.new_message
+        .input_box
+          %input{type: "text",class: "input_box__text",placeholder: "type a message"}
+          %label{class: "input-box__image"}
+            = icon('fas','image')
+            %input{type: "file",class: "input-box__file"}
+        %input{type: "submit",class: "subit-btn",value: "Send"}
