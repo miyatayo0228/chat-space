@@ -1,39 +1,39 @@
 .main
 
-  .main__header
-    .mein__header--left
-      .main__header--group
+  .main-header
+    .main-header__left
+      .left-name
         test1
-      .main__header--member
+      .left-member
         Member:aaa
-    .main__header--right
+    .main-header__right
       %button{type: "submit", class:'btn',onclick:"#"} Edit
 
-  .main__center
-    .main__main
-      .main__post--1
-        .post__top
-          .main__name--1
+  .main-center
+    .main-center__main
+      .main-first__post
+        .post-top
+          .post-top__name
             miyata
-          .main__day--1
+          .post-top__day
             2020/05/08(Fry)12:00
-        .main__comment--1
+        .post-comment
           おはよう！
 
-      .main__post--2
-        .post__top
-          .main__name--2
+      .main-second__post
+        .post-top
+          .post-top__name
             miyata
-          .main__day--2
+          .post-top__day
             2020/05/09(Sat)13:00
-        .main__comment--2
+        .post-comment
           こんんちは！
             
-    .main__footer
+    .main-footer
       %form.new_message
         .input_box
           %input{type: "text",class: "input_box__text",placeholder: "type a message"}
-          %label{class: "input-box__image"}
+          %label{class: "input_box__image"}
             = icon('fas','image')
-            %input{type: "file",class: "input-box__file"}
+            %input{type: "file",class: "input_box__file"}
         %input{type: "submit",class: "subit-btn",value: "Send"}
