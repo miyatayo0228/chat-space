@@ -34,9 +34,13 @@
         font-weight: bold;
       }
   
-       a {
+      &__icon {
+        display: flex;
+        a {
+        margin-left: 0.3rem;
+        text-decoration:none;
         color: white;
-        text-decoration: none;
+        }
       }
     }
   }
