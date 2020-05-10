@@ -8,24 +8,19 @@
 
       %ul.header-box__icon
         %li.list
-          = link_to do
-            = icon('fas', 'pen-square', class: 'icon')
+          = link_to new_group_path do
+            %i.fa.fa-edit.header-items__icons--pen
         %li.list
           = link_to edit_user_path(current_user) do
-            = icon('fas', 'cog', class: 'icon')
+            %i.fa.fa-cog.header-items__icons--cog
 
   .side-main
 
     .side-main__first
-      .side-first__name
-        = link_to "#" do
-          test1
-      .side-first__message
-        まだメッセージがありません
-
-    .side-main__second
-      .side-second__name
-        = link_to "#" do
-          test2
-      .side-second__message
-        まだメッセージがありません
+      - current_user.groups.each do |group|
+        .group
+          = link_to '#' do
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません。
