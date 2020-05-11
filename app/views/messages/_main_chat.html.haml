@@ -3,37 +3,25 @@
   .main-header
     .main-header__left
       .left-name
-        test1
+        = @group.name
       .left-member
-        Member:aaa
+        - @group.users.each do |user|
+          = user.name
     .main-header__right
-      %button{type: "submit", class:'btn',onclick:"#"} Edit
+      = link_to edit_group_path(@group.id) do
+        %button{type: "submit", class:'btn'} Edit
+        
 
   .main-center
     .main-center__main
-      .main-first__post
-        .post-top
-          .post-top__name
-            miyata
-          .post-top__day
-            2020/05/08(Fry)12:00
-        .post-comment
-          おはよう！
-
-      .main-second__post
-        .post-top
-          .post-top__name
-            miyata
-          .post-top__day
-            2020/05/09(Sat)13:00
-        .post-comment
-          こんんちは！
+      = render @messages
+        
             
     .main-footer
-      %form.new_message
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .input_box
-          %input{type: "text",class: "input_box__text",placeholder: "type a message"}
-          %label{class: "input_box__image"}
-            = icon('fas','image')
-            %input{type: "file",class: "input_box__file"}
-        %input{type: "submit",class: "subit-btn",value: "Send"}
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
