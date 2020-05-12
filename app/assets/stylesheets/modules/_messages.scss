@@ -132,10 +132,12 @@
     height: calc(100% - 100px);
     width: 100%;
     position: relative;
+    
 
     &__main {
       height: calc(100% - 100px);
       width: 100%;
+      overflow: scroll;
 
       .message {
         padding-top: 35px;
