@@ -5,6 +5,7 @@
       .left-name
         = @group.name
       .left-member
+        Member:
         - @group.users.each do |user|
           = user.name
     .main-header__right
